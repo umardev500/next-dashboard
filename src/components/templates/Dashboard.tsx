@@ -1,5 +1,6 @@
 'use client'
 
+import { SimpleBar } from '@/components/atoms'
 import { Sidebar } from '@/components/organisms'
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
 import { type ReactNode } from 'react'
@@ -23,7 +24,9 @@ export const Dashboard = ({ children }: Props) => {
       <Sidebar />
 
       {/* Dynamic content */}
-      {children}
+      <div className="fixed overflow-hidden left-[270px] top-0 bottom-0 right-0">
+        <SimpleBar className="h-full">{children}</SimpleBar>
+      </div>
     </main>
   )
 }
