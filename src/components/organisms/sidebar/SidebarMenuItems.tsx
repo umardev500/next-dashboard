@@ -28,8 +28,26 @@ export const SidebarMenuItems: SidebarMenuType[] = [
   },
   {
     name: 'Products',
-    href: '/',
+    href: '#',
     icon: <PackageDuotone className="w-[18px] h-[18px] fill-current" />,
+    children: [
+      {
+        name: 'All Products',
+        href: '/products',
+      },
+      {
+        name: 'New Products',
+        href: '/products?status=new',
+      },
+      {
+        name: 'Draft Products',
+        href: '/products?status=draft',
+      },
+      {
+        name: 'Deleted Products',
+        href: '/products?status=deleted',
+      },
+    ],
   },
   {
     name: 'Orders',
