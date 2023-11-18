@@ -1,3 +1,4 @@
+import { Sidebar } from '@/components/organisms'
 import { type ReactNode } from 'react'
 
 interface Props {
@@ -5,5 +6,13 @@ interface Props {
 }
 
 export const Dashboard = ({ children }: Props) => {
-  return <>{children}</>
+  return (
+    <main>
+      {/* Sidebar */}
+      <Sidebar />
+
+      {/* Dynamic content */}
+      {children}
+    </main>
+  )
 }
