@@ -35,6 +35,24 @@ export const SidebarMenuItems: SidebarMenuType[] = [
     name: 'Orders',
     href: '/',
     icon: <ShoppingCartDuotone className="w-[18px] h-[18px] fill-current" />,
+    children: [
+      {
+        name: 'All orders',
+        href: '/',
+      },
+      {
+        name: 'Pending orders',
+        href: '/',
+      },
+      {
+        name: 'Canceled orders',
+        href: '/',
+      },
+      {
+        name: 'Settlement orders',
+        href: '/',
+      },
+    ],
   },
   {
     name: 'Users',
