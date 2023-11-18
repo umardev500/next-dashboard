@@ -7,6 +7,7 @@ import {
   ShoppingCartDuotone,
   SignoutDuotone,
   TelegramDuotone,
+  UserDuotone,
   UserGearDuotone,
 } from '@/components/atoms'
 import { type SidebarMenuType } from '@/types/menu'
@@ -34,6 +35,11 @@ export const SidebarMenuItems: SidebarMenuType[] = [
     name: 'Orders',
     href: '/',
     icon: <ShoppingCartDuotone className="w-[18px] h-[18px] fill-current" />,
+  },
+  {
+    name: 'Users',
+    href: '/',
+    icon: <UserDuotone className="w-[18px] h-[18px] fill-current" />,
   },
   {
     name: 'Support & Help',
