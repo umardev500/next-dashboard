@@ -1,3 +1,5 @@
+'use client'
+
 import { Collapse, SidebarMenu } from '@/components/atoms'
 import { type SidebarMenuType } from '@/types/menu'
 import { Lexend_Deca } from 'next/font/google'
@@ -10,6 +12,8 @@ interface Props {
 }
 
 export const SidebarMenuList = ({ menu }: Props) => {
+  console.log('re render')
+
   return (
     <nav className="flex flex-col mt-10">
       {menu.map((item, index) => {
@@ -21,21 +25,27 @@ export const SidebarMenuList = ({ menu }: Props) => {
               <>
                 {item.children ? (
                   <>
-                    <Collapse>
-                      {() => (
-                        <>
-                          <SidebarMenu menu={item} collapse />
-                        </>
-                      )}
+                    <Collapse
+                      header={(status, handleToggle) => {
+                        return (
+                          <SidebarMenu
+                            onClick={handleToggle}
+                            isOpen={status}
+                            menu={item}
+                            collapse
+                          />
+                        )
+                      }}
+                    >
+                      {item.children.map((child, i) => {
+                        // TODO
+                        return (
+                          <Fragment key={i}>
+                            <SidebarMenu sub menu={child} />
+                          </Fragment>
+                        )
+                      })}
                     </Collapse>
-                    {item.children.map((child, i) => {
-                      // TODO
-                      return (
-                        <Fragment key={i}>
-                          <SidebarMenu sub menu={child} />
-                        </Fragment>
-                      )
-                    })}
                   </>
                 ) : (
                   <SidebarMenu menu={item} />
