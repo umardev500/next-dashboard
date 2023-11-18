@@ -30,6 +30,7 @@ export const SidebarMenuItems: SidebarMenuType[] = [
     name: 'Products',
     href: '#',
     icon: <PackageDuotone className="w-[18px] h-[18px] fill-current" />,
+    open: true,
     children: [
       {
         name: 'All Products',

@@ -26,6 +26,7 @@ export const SidebarMenuList = ({ menu }: Props) => {
                 {item.children ? (
                   <>
                     <Collapse
+                      defaultOpen={item.open}
                       header={(status, handleToggle) => {
                         return (
                           <SidebarMenu
