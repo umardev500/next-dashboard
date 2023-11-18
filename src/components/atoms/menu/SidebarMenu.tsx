@@ -1,12 +1,14 @@
+import { CaretDownBold } from '@/components/atoms'
 import { type SidebarMenuType } from '@/types/menu'
 import Link from 'next/link'
 
 interface Props {
   menu: SidebarMenuType
   sub?: boolean
+  collapse?: boolean
 }
 
-export const SidebarMenu = ({ menu, sub = false }: Props) => {
+export const SidebarMenu = ({ menu, sub, collapse = false }: Props) => {
   return (
     <>
       <Link
@@ -15,14 +17,25 @@ export const SidebarMenu = ({ menu, sub = false }: Props) => {
           sub ? 'text-gray-500' : 'text-gray-700'
         } hover:bg-gray-100 hover:text-gray-900`}
       >
-        {sub ? (
-          <>
-            <span className="me-[18px] ms-1 inline-flex h-1 w-1 rounded-full bg-current transition-all duration-200 opacity-40" />
-          </>
+        {collapse ? (
+          <div className="flex-1 flex items-center justify-between">
+            <span className="flex items-center">
+              {menu?.icon && <span className="me-2 text-gray-800">{menu.icon}</span>} {menu.name}
+            </span>
+            <CaretDownBold className="w-4 h-4 fill-gray-500" />
+          </div>
         ) : (
-          <>{menu?.icon && <span className="me-2 text-gray-800">{menu.icon}</span>}</>
+          <>
+            {sub ? (
+              <>
+                <span className="me-[18px] ms-1 inline-flex h-1 w-1 rounded-full bg-current transition-all duration-200 opacity-40" />
+              </>
+            ) : (
+              <>{menu?.icon && <span className="me-2 text-gray-800">{menu.icon}</span>}</>
+            )}
+            {menu.name}
+          </>
         )}
-        {menu.name}
       </Link>
     </>
   )

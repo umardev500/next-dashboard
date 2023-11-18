@@ -1,4 +1,4 @@
-import { SidebarMenu } from '@/components/atoms'
+import { Collapse, SidebarMenu } from '@/components/atoms'
 import { type SidebarMenuType } from '@/types/menu'
 import { Lexend_Deca } from 'next/font/google'
 import { Fragment } from 'react'
@@ -21,6 +21,13 @@ export const SidebarMenuList = ({ menu }: Props) => {
               <>
                 {item.children ? (
                   <>
+                    <Collapse>
+                      {() => (
+                        <>
+                          <SidebarMenu menu={item} collapse />
+                        </>
+                      )}
+                    </Collapse>
                     {item.children.map((child, i) => {
                       // TODO
                       return (
