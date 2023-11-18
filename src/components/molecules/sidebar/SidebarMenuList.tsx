@@ -18,7 +18,22 @@ export const SidebarMenuList = ({ menu }: Props) => {
         return (
           <Fragment key={index}>
             {item.href ? (
-              <SidebarMenu menu={item} />
+              <>
+                {item.children ? (
+                  <>
+                    {item.children.map((child, i) => {
+                      // TODO
+                      return (
+                        <Fragment key={i}>
+                          <SidebarMenu sub menu={child} />
+                        </Fragment>
+                      )
+                    })}
+                  </>
+                ) : (
+                  <SidebarMenu menu={item} />
+                )}
+              </>
             ) : (
               <h6
                 className={`${lexend.className} px-6 mt-7 mb-2 truncate tracking-widest text-[11px] uppercase font-medium text-gray-500`}
