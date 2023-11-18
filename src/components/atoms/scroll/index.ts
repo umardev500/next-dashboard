@@ -1,1 +1,1 @@
-export * from './SimpleBar';
+export * from './SimpleBar'
