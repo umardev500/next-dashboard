@@ -40,6 +40,24 @@ export const SidebarMenuItems: SidebarMenuType[] = [
     name: 'Users',
     href: '/',
     icon: <UserDuotone className="w-[18px] h-[18px] fill-current" />,
+    children: [
+      {
+        name: 'All Users',
+        href: '/',
+      },
+      {
+        name: 'New Users',
+        href: '/',
+      },
+      {
+        name: 'Inactive users',
+        href: '/',
+      },
+      {
+        name: 'Deleted users',
+        href: '/',
+      },
+    ],
   },
   {
     name: 'Support & Help',

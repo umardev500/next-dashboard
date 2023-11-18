@@ -1,3 +1,4 @@
+export * from './CaretDownBold'
 export * from './ChartBarDuotone'
 export * from './FileImageDuotone'
 export * from './FolderLockDuotone'
