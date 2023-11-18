@@ -12,8 +12,6 @@ interface Props {
 }
 
 export const SidebarMenuList = ({ menu }: Props) => {
-  console.log('re render')
-
   return (
     <nav className="flex flex-col mt-10">
       {menu.map((item, index) => {
