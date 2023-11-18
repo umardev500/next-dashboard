@@ -3,6 +3,7 @@
 import { Sidebar } from '@/components/organisms'
 import { AppProgressBar as ProgressBar } from 'next-nprogress-bar'
 import { type ReactNode } from 'react'
+import 'simplebar-react/dist/simplebar.min.css'
 
 interface Props {
   children?: ReactNode
