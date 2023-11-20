@@ -38,15 +38,15 @@ export const SidebarMenuItems: SidebarMenuType[] = [
       },
       {
         name: 'New Products',
-        href: '/products?status=new',
+        href: '/products/new',
       },
       {
         name: 'Draft Products',
-        href: '/products?status=draft',
+        href: '/products/draft',
       },
       {
         name: 'Deleted Products',
-        href: '/products?status=deleted',
+        href: '/products/deleted',
       },
     ],
   },
@@ -57,19 +57,19 @@ export const SidebarMenuItems: SidebarMenuType[] = [
     children: [
       {
         name: 'All orders',
-        href: '/',
+        href: '/orders/all',
       },
       {
         name: 'Pending orders',
-        href: '/',
+        href: '/orders/pending',
       },
       {
         name: 'Canceled orders',
-        href: '/',
+        href: '/orders/canceled',
       },
       {
         name: 'Settlement orders',
-        href: '/',
+        href: '/orders/settlement',
       },
     ],
   },
@@ -80,19 +80,19 @@ export const SidebarMenuItems: SidebarMenuType[] = [
     children: [
       {
         name: 'All Users',
-        href: '/',
+        href: '/users/all',
       },
       {
         name: 'New Users',
-        href: '/',
+        href: '/users/new-users',
       },
       {
         name: 'Inactive users',
-        href: '/',
+        href: '/users/inactive',
       },
       {
         name: 'Deleted users',
-        href: '/',
+        href: '/users/deleted',
       },
     ],
   },

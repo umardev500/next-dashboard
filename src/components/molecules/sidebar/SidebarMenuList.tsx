@@ -19,7 +19,12 @@ export const SidebarMenuList = ({ menu }: Props) => {
     <nav className="flex flex-col mt-10">
       {menu.map((item, index) => {
         // TODO
-        const isActive = pathname === item.href
+        let isActive = pathname === item.href
+        const existInDropdown = item.children?.filter((i) => i.href === pathname)
+        if (existInDropdown?.length) {
+          console.log(index, existInDropdown)
+          isActive = true
+        }
 
         return (
           <Fragment key={index}>
@@ -35,6 +40,7 @@ export const SidebarMenuList = ({ menu }: Props) => {
                             onClick={handleToggle}
                             isOpen={status}
                             menu={item}
+                            isActive={isActive}
                             collapse
                           />
                         )
@@ -42,9 +48,11 @@ export const SidebarMenuList = ({ menu }: Props) => {
                     >
                       {item.children.map((child, i) => {
                         // TODO
+                        const isChildActive = pathname === child.href
+
                         return (
                           <Fragment key={i}>
-                            <SidebarMenu sub menu={child} />
+                            <SidebarMenu sub menu={child} isActive={isChildActive} />
                           </Fragment>
                         )
                       })}

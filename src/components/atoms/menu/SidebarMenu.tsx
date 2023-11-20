@@ -20,12 +20,18 @@ export const SidebarMenu = ({
   onClick,
 }: Props) => {
   const activeColor = 'text-indigo-700'
+  const iconActiveColor = 'text-indigo-800'
   const menuActive = `${isActive ? activeColor : 'text-gray-700'}`
-  const iconClassName = `${isActive ? activeColor : 'text-gray-800'}`
+  const iconClassName = `${isActive ? iconActiveColor : 'text-gray-800'}`
+  const subClassName = `${isActive ? 'text-gray-900' : 'text-gray-500'}`
 
   const className = `flex items-center px-3 py-2 mx-3 my-0.5 capitalize rounded-md transition-colors duration-200 text-sm font-medium ${
-    sub ? 'text-gray-500' : menuActive
+    sub ? subClassName : menuActive
   } hover:bg-gray-100 hover:text-gray-900`
+
+  const dotClassName = `me-[18px] ms-1 inline-flex h-1 w-1 rounded-full bg-current transition-all duration-200 ${
+    isActive ? 'bg-indigo-700 ring-[1px] ring-indigo-700' : 'opacity-40'
+  }`
 
   return (
     <>
@@ -33,7 +39,8 @@ export const SidebarMenu = ({
         <div className={`${className} cursor-pointer`} onClick={onClick}>
           <div className="flex-1 flex items-center justify-between">
             <span className="flex items-center">
-              {menu?.icon && <span className="me-2 text-gray-800">{menu.icon}</span>} {menu.name}
+              {menu?.icon && <span className={`me-2 ${iconClassName}`}>{menu.icon}</span>}{' '}
+              {menu.name}
             </span>
             <CaretDownBold
               className={`w-4 h-4 fill-gray-500 transition-transform duration-300 ${
@@ -46,7 +53,7 @@ export const SidebarMenu = ({
         <Link href={menu.href as string} className={className}>
           {sub ? (
             <>
-              <span className="me-[18px] ms-1 inline-flex h-1 w-1 rounded-full bg-current transition-all duration-200 opacity-40" />
+              <span className={dotClassName} />
             </>
           ) : (
             <>{menu?.icon && <span className={`me-2 ${iconClassName}`}>{menu.icon}</span>}</>
