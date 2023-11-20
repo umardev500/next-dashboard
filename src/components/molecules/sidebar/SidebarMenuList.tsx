@@ -3,6 +3,7 @@
 import { Collapse, SidebarMenu } from '@/components/atoms'
 import { type SidebarMenuType } from '@/types/menu'
 import { Lexend_Deca } from 'next/font/google'
+import { usePathname } from 'next/navigation'
 import { Fragment } from 'react'
 
 const lexend = Lexend_Deca({ subsets: ['latin'] })
@@ -12,10 +13,13 @@ interface Props {
 }
 
 export const SidebarMenuList = ({ menu }: Props) => {
+  const pathname = usePathname()
+
   return (
     <nav className="flex flex-col mt-10">
       {menu.map((item, index) => {
         // TODO
+        const isActive = pathname === item.href
 
         return (
           <Fragment key={index}>
@@ -47,7 +51,7 @@ export const SidebarMenuList = ({ menu }: Props) => {
                     </Collapse>
                   </>
                 ) : (
-                  <SidebarMenu menu={item} />
+                  <SidebarMenu isActive={isActive} menu={item} />
                 )}
               </>
             ) : (

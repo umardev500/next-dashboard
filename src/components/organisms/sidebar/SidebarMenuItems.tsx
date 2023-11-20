@@ -18,12 +18,12 @@ export const SidebarMenuItems: SidebarMenuType[] = [
   },
   {
     name: 'File manager',
-    href: '/',
+    href: '/file-manager',
     icon: <FileImageDuotone className="w-[18px] h-[18px] fill-current" />,
   },
   {
     name: 'Analytics',
-    href: '/',
+    href: '/analytics',
     icon: <ChartBarDuotone className="w-[18px] h-[18px] fill-current" />,
   },
   {
@@ -101,12 +101,12 @@ export const SidebarMenuItems: SidebarMenuType[] = [
   },
   {
     name: 'Supports',
-    href: '/',
+    href: '/supports',
     icon: <HeadsetDuotone className="w-[18px] h-[18px] fill-current" />,
   },
   {
     name: 'Live Chat',
-    href: '/',
+    href: '/live-chat',
     icon: <TelegramDuotone className="w-[18px] h-[18px] fill-current" />,
   },
   {
@@ -114,17 +114,17 @@ export const SidebarMenuItems: SidebarMenuType[] = [
   },
   {
     name: 'Roles & Permissions',
-    href: '/',
+    href: '/roles-permission',
     icon: <FolderLockDuotone className="w-[18px] h-[18px] fill-current" />,
   },
   {
     name: 'Account',
-    href: '/',
+    href: '/account',
     icon: <UserGearDuotone className="w-[18px] h-[18px] fill-current" />,
   },
   {
     name: 'Sign Out',
-    href: '/',
+    href: '/signout',
     icon: <SignoutDuotone className="w-[18px] h-[18px] fill-current" />,
   },
 ]
