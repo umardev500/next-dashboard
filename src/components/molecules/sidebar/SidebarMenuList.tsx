@@ -22,7 +22,6 @@ export const SidebarMenuList = ({ menu }: Props) => {
         let isActive = pathname === item.href
         const existInDropdown = item.children?.filter((i) => i.href === pathname)
         if (existInDropdown?.length) {
-          console.log(index, existInDropdown)
           isActive = true
         }
 
