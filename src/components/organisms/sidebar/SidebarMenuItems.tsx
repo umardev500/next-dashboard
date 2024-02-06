@@ -28,7 +28,7 @@ export const SidebarMenuItems: SidebarMenuType[] = [
   },
   {
     name: 'Products',
-    href: '#',
+    href: '/products',
     icon: <PackageDuotone className="w-[18px] h-[18px] fill-current" />,
     open: true,
     children: [
@@ -52,7 +52,7 @@ export const SidebarMenuItems: SidebarMenuType[] = [
   },
   {
     name: 'Orders',
-    href: '/',
+    href: '/orders',
     icon: <ShoppingCartDuotone className="w-[18px] h-[18px] fill-current" />,
     children: [
       {
@@ -75,7 +75,7 @@ export const SidebarMenuItems: SidebarMenuType[] = [
   },
   {
     name: 'Users',
-    href: '/',
+    href: '/users',
     icon: <UserDuotone className="w-[18px] h-[18px] fill-current" />,
     children: [
       {
