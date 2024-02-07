@@ -11,6 +11,7 @@ import {
   UserGearDuotone,
 } from '@/components/atoms'
 import { type SidebarMenuType } from '@/types/menu'
+import { NewUserModal } from '@/components/organisms/user/modal'
 
 export const SidebarMenuItems: SidebarMenuType[] = [
   {
@@ -85,6 +86,7 @@ export const SidebarMenuItems: SidebarMenuType[] = [
       {
         name: 'New Users',
         href: '/users/new-users',
+        button: (props) => <NewUserModal {...props} />,
       },
       {
         name: 'Inactive users',

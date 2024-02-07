@@ -1,6 +1,7 @@
 import { CaretDownBold } from '@/components/atoms'
 import { type SidebarMenuType } from '@/types/menu'
 import Link from 'next/link'
+import React from 'react'
 
 interface Props {
   menu: SidebarMenuType
@@ -11,21 +12,17 @@ interface Props {
   onClick?: () => void
 }
 
-export const SidebarMenu = ({
-  menu,
-  isActive = false,
-  sub,
-  collapse,
-  isOpen = false,
-  onClick,
-}: Props) => {
+export const SidebarMenu: React.FC<Props> = (props) => {
+  const { menu, isActive = false, sub, collapse, isOpen = false, onClick } = props
+  const isButton = props.menu.button !== undefined
+
   const activeColor = 'text-indigo-700'
   const iconActiveColor = 'text-indigo-800 group-hover:text-gray-800'
   const menuActive = `${isActive ? activeColor : 'text-gray-700'}`
   const iconClassName = `${isActive ? iconActiveColor : 'text-gray-800'}`
   const subClassName = `${isActive ? 'text-gray-900' : 'text-gray-500'}`
 
-  const className = `group flex items-center px-3 py-2 mx-3 my-0.5 capitalize rounded-md transition-colors duration-200 text-sm font-medium ${
+  const className = `group cursor-pointer flex items-center px-3 py-2 mx-3 my-0.5 capitalize rounded-md transition-colors duration-200 text-sm font-medium ${
     sub ? subClassName : menuActive
   } hover:bg-gray-100 hover:text-gray-900`
 
@@ -51,6 +48,8 @@ export const SidebarMenu = ({
             />
           </div>
         </div>
+      ) : isButton ? (
+        menu.button?.({ menu, sub, open: false, className, dotClassName, iconClassName })
       ) : (
         <Link href={menu.href as string} className={className}>
           {sub ? (
