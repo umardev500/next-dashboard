@@ -1,3 +1,4 @@
+import type React from 'react'
 import { type ReactElement } from 'react'
 
 export interface SidebarMenuType {
@@ -8,5 +9,6 @@ export interface SidebarMenuType {
   children?: Array<{
     name: string
     href: string
+    modal?: React.ReactNode
   }>
 }
