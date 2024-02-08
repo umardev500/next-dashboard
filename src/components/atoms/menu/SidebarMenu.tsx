@@ -16,8 +16,8 @@ export const SidebarMenu: React.FC<Props> = (props) => {
   const { menu, isActive = false, sub, collapse, isOpen = false, onClick } = props
   const isButton = props.menu.button !== undefined
 
-  const activeColor = 'text-indigo-700'
-  const iconActiveColor = 'text-indigo-800 group-hover:text-gray-800'
+  const activeColor = 'text-gray-900 bg-gray-100'
+  const iconActiveColor = 'text-gray-900 group-hover:text-gray-800'
   const menuActive = `${isActive ? activeColor : 'text-gray-700'}`
   const iconClassName = `${isActive ? iconActiveColor : 'text-gray-800'}`
   const subClassName = `${isActive ? 'text-gray-900' : 'text-gray-500'}`
@@ -26,10 +26,10 @@ export const SidebarMenu: React.FC<Props> = (props) => {
     sub ? subClassName : menuActive
   } hover:bg-gray-100 hover:text-gray-900`
 
-  const dotClassName = `me-[18px] ms-1 inline-flex h-1 w-1 rounded-full bg-current transition-all duration-200 ${
+  const dotClassName = `me-[18px] ring-[1px] ms-1 inline-flex h-1 w-1 rounded-full bg-current transition-all duration-200 ${
     isActive
-      ? 'bg-indigo-700 ring-[1px] ring-indigo-700 group-hover:bg-gray-800 group-hover:ring-gray-800'
-      : 'opacity-40'
+      ? 'bg-gray-700 ring-gray-700 group-hover:bg-gray-800 group-hover:ring-gray-800'
+      : 'opacity-40 ring-transparent bg-gray-700'
   }`
 
   return (
