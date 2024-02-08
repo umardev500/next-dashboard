@@ -41,10 +41,7 @@ export const NewUserModal: React.FC<SidebarBtnProps> = ({
       >
         {({ isOpen, close }) => (
           <>
-            <div>
-              {isOpen ? 'Open' : 'Closed'}
-              <button onClick={close}>Close</button>
-            </div>
+            <div></div>
           </>
         )}
       </Modal>

@@ -6,6 +6,7 @@ import React, { Fragment, useState } from 'react'
 type ModalPosition = 'top' | 'center'
 
 interface Props {
+  dialogClassName?: string
   position?: ModalPosition
   open?: boolean
   onClose?: () => void
@@ -14,7 +15,7 @@ interface Props {
 }
 
 export const Modal: React.FC<Props> = (props) => {
-  const { position = 'top', open = false, onClose, button, children } = props
+  const { dialogClassName, position = 'top', open = false, onClose, button, children } = props
   const [isOpen, setIsOpen] = useState(open)
 
   function closeModal() {
@@ -55,7 +56,9 @@ export const Modal: React.FC<Props> = (props) => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full top-0 max-w-lg transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel
+                  className={`${dialogClassName} w-full top-0 max-w-lg transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all`}
+                >
                   {children?.({ isOpen, close: closeModal })}
                 </Dialog.Panel>
               </Transition.Child>
