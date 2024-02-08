@@ -1,7 +1,11 @@
 'use client'
 
-export default function UserPage() {
-  console.log('render')
+import { UserTable } from '@/components/organisms/user'
 
-  return <></>
+export default function UserPage() {
+  return (
+    <div className="container m-auto">
+      <UserTable />
+    </div>
+  )
 }
