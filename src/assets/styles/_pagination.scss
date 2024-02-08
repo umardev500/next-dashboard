@@ -1,0 +1,24 @@
+.my-pagination {
+  display: flex;
+
+  li:first-child>a {
+    @apply rounded-s-lg;
+  }
+
+  li:last-child>a {
+    @apply rounded-e-lg border-e;
+  }
+
+  li.selected>a {
+    @apply bg-blue-500 text-white border-y-blue-500;
+  }
+
+  li:not(.selected)>a {
+    @apply hover:bg-gray-100;
+  }
+
+  li>a {
+    @apply text-base;
+    @apply flex items-center px-4 h-10 ms-0 bg-white border border-e-0 border-gray-300;
+  }
+}

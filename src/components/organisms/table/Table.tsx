@@ -3,6 +3,7 @@
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table'
 import React, { useEffect, useState } from 'react'
 import { faker } from '@faker-js/faker'
+import { Pagination } from '@/components/organisms'
 
 export interface TableProps {
   className?: string
@@ -137,6 +138,10 @@ export const Table: React.FC<TableProps> = () => {
           ))}
         </tbody>
       </table>
+
+      <div className="mt-8">
+        <Pagination pageCount={data.length} />
+      </div>
     </div>
   )
 }
