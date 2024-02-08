@@ -10,15 +10,15 @@
   }
 
   li.selected>a {
-    @apply bg-blue-500 text-white border-y-blue-500;
+    @apply bg-blue-50 text-blue-600 font-medium;
   }
 
   li:not(.selected)>a {
-    @apply hover:bg-gray-100;
+    @apply hover:bg-gray-100 text-gray-600;
   }
 
   li>a {
-    @apply text-base;
+    @apply text-base select-none;
     @apply flex items-center px-4 h-10 ms-0 bg-white border border-e-0 border-gray-300;
   }
 }
