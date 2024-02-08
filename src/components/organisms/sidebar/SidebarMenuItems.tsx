@@ -81,7 +81,7 @@ export const SidebarMenuItems: SidebarMenuType[] = [
     children: [
       {
         name: 'All Users',
-        href: '/users/all',
+        href: '/users',
       },
       {
         name: 'New Users',
