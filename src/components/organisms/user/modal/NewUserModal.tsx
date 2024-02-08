@@ -57,7 +57,7 @@ export const NewUserModal: React.FC<SidebarBtnProps> = ({
                 <Input id="pass" type="password" placeholder="Type the password" />
               </div>
               <div className="mb-4">
-                <Label id="pass-confirm">Confir password</Label>
+                <Label id="pass-confirm">Confirm password</Label>
                 <Input
                   id="pass-confirm"
                   type="password"
