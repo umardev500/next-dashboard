@@ -45,7 +45,7 @@ export const Modal: React.FC<Props> = (props) => {
             <div
               className={`flex min-h-full ${
                 position === 'top' ? 'items-start' : 'items-center'
-              } justify-center p-4 text-center`}
+              } justify-center p-4 pt-12 text-center`}
             >
               <Transition.Child
                 as={Fragment}
