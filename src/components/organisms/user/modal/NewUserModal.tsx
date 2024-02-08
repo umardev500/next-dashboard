@@ -1,5 +1,6 @@
 'use client'
 
+import { ButtonPrimary, Input, Label } from '@/components/atoms'
 import { Modal } from '@/components/organisms'
 import { type SidebarBtnProps } from '@/types'
 import React from 'react'
@@ -19,6 +20,7 @@ export const NewUserModal: React.FC<SidebarBtnProps> = ({
   return (
     <>
       <Modal
+        dialogClassName="max-w-sm"
         open={open}
         button={({ toggler }) => (
           <div
@@ -41,7 +43,30 @@ export const NewUserModal: React.FC<SidebarBtnProps> = ({
       >
         {({ isOpen, close }) => (
           <>
-            <div></div>
+            <div>
+              <div className="mb-4">
+                <Label id="fn">Full name</Label>
+                <Input id="fn" placeholder="Jhon Doe" />
+              </div>
+              <div className="mb-4">
+                <Label id="user">Username</Label>
+                <Input id="user" placeholder="Enter username" />
+              </div>
+              <div className="mb-4">
+                <Label id="pass">Password</Label>
+                <Input id="pass" type="password" placeholder="Type the password" />
+              </div>
+              <div className="mb-4">
+                <Label id="pass-confirm">Confir password</Label>
+                <Input
+                  id="pass-confirm"
+                  type="password"
+                  placeholder="Enter same password as before"
+                />
+              </div>
+
+              <ButtonPrimary>Submit</ButtonPrimary>
+            </div>
           </>
         )}
       </Modal>
