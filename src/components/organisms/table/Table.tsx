@@ -9,7 +9,7 @@ export interface TableProps {
   className?: string
 }
 
-const statusOptions = ['active', 'inactive']
+const statusOptions = ['active', 'inactive', 'pending', 'deleted']
 
 const columns = [
   {
@@ -47,6 +47,12 @@ const columns = [
         case 'inactive':
           theClass += ' bg-red-100 text-red-800'
           break
+        case 'pending':
+          theClass += ' bg-yellow-100 text-yellow-800'
+          break
+        case 'deleted':
+          theClass += ' bg-gray-100 text-gray-800'
+          break
       }
 
       return (
@@ -65,7 +71,7 @@ export const Table: React.FC<TableProps> = () => {
       name: 'umarsdd',
       email: 'lorem@example.com',
       username: 'umardev500',
-      status: <p>Hi</p>,
+      status: 'active',
     },
   ])
 
