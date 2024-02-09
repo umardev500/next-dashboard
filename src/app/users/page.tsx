@@ -1,6 +1,6 @@
 'use client'
 
-import { ButtonPrimary } from '@/components/atoms'
+import { ButtonSecondary } from '@/components/atoms'
 import { NewUserModal, UserTable } from '@/components/organisms/user'
 
 export default function UserPage() {
@@ -15,13 +15,13 @@ export default function UserPage() {
           <div>
             <NewUserModal
               button={(toggler) => (
-                <ButtonPrimary
+                <ButtonSecondary
                   onClick={() => {
                     toggler((prev) => !prev)
                   }}
                 >
                   Add new user
-                </ButtonPrimary>
+                </ButtonSecondary>
               )}
             />
           </div>
