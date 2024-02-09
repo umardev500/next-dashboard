@@ -145,7 +145,7 @@ export const Table: React.FC<TableProps> = () => {
         </tbody>
       </table>
 
-      <div className="mt-8">
+      <div className="mt-6">
         <Pagination pageCount={data.length} />
       </div>
     </div>
