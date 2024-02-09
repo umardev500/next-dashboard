@@ -34,7 +34,7 @@ const columns = [
   },
   {
     accessorKey: 'status',
-    header: 'Status',
+    header: () => <p className="text-center">Status</p>,
     cell: (props: any) => {
       const status = props.getValue().toLowerCase()
 
@@ -65,7 +65,7 @@ export const Table: React.FC<TableProps> = () => {
       name: 'umarsdd',
       email: 'lorem@example.com',
       username: 'umardev500',
-      status: 'active',
+      status: <p>Hi</p>,
     },
   ])
 
@@ -122,7 +122,7 @@ export const Table: React.FC<TableProps> = () => {
         {/* Rows */}
         <tbody>
           {rows.map((row, i) => (
-            <tr className="odd:bg-white even:bg-gray-50 border-b" key={row.id}>
+            <tr className="odd:bg-white cursor-pointer even:bg-gray-50 border-b" key={row.id}>
               <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">{i + 1}</td>
               {row.getVisibleCells().map((cell) => {
                 return (
