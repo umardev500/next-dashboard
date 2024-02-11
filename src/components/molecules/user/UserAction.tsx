@@ -6,7 +6,7 @@ import { type UserData } from '@/types'
 const UserActionMenu = (item: UserData) => {
   return (
     <div className="bg-white min-w-[120px] overflow-hidden shadow-lg py-2 whitespace-nowrap rounded-lg">
-      <div className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-semibold">Detail</div>
+      <div className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-medium">Detail</div>
       <Modal
         dialogClassName="max-w-sm"
         button={({ toggler }) => (
@@ -14,7 +14,7 @@ const UserActionMenu = (item: UserData) => {
             onClick={() => {
               toggler((prev) => !prev)
             }}
-            className="text-xs text-red-600 hover:bg-gray-50 px-4 py-1.5 font-semibold"
+            className="text-xs text-red-600 hover:bg-gray-50 px-4 py-1.5 font-medium"
           >
             Delete
           </div>
@@ -33,7 +33,7 @@ const UserActionMenu = (item: UserData) => {
         )}
       </Modal>
 
-      <div className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-semibold">Edit</div>
+      <div className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-medium">Edit</div>
     </div>
   )
 }
