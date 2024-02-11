@@ -1,13 +1,13 @@
 import { Button, type ButtonProps } from '@/components/atoms'
 import React from 'react'
 
-export const ButtonPrimary: React.FC<ButtonProps> = (props) => {
+export const ButtonDanger: React.FC<ButtonProps> = (props) => {
   const { children, className } = props
 
   return (
     <Button
       {...props}
-      className={`${className} bg-blue-700 hover:bg-blue-800 focus:bg-blue-800 focus:ring-blue-300 text-white`}
+      className={`${className} bg-red-700 hover:bg-red-800 focus:bg-red-800 focus:ring-red-300 text-white`}
     >
       {children}
     </Button>
