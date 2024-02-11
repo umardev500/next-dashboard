@@ -1,5 +1,7 @@
-import type Lng from '@/app/i18n/en.json'
+import type Dict from '@/app/i18n/en.json'
 export type Lang = 'en' | 'id'
+
+export type DictType = typeof Dict
 
 export interface PageProps {
   params: {
@@ -9,5 +11,6 @@ export interface PageProps {
 }
 
 export interface ClientPageProps {
-  dict: typeof Lng
+  dict: typeof Dict
+  children?: React.ReactNode
 }

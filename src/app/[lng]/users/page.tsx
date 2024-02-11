@@ -1,15 +1,33 @@
-import { getDictionary } from '@/app/[lng]/dictionaries'
-import { Users } from '@/app/[lng]/users/Users'
-import { type PageProps } from '@/types'
+'use client'
 
-interface Props extends PageProps {}
+import { ButtonSecondary } from '@/components/atoms'
+import { NewUserModal, UserTable } from '@/components/organisms/user'
 
-// eslint-disable-next-line @next/next/no-async-client-component
-export default async function UserPage(props: Props) {
-  const { params } = props
-  const { lng } = params
-
-  const dict = await getDictionary(lng)
-
-  return <Users dict={dict} />
+export default function UserPage() {
+  return (
+    <div className="container m-auto p-4 mt-6">
+      <div className="bg-white p-8 rounded-lg">
+        <div className="mb-10 flex justify-between">
+          <div>
+            <h1 className="text-2xl lg:text-3xl font-semibold text-gray-700">Users</h1>
+            <p className="text-gray-500 text-sm">1.232.150 registered users</p>
+          </div>
+          <div>
+            <NewUserModal
+              button={(toggler) => (
+                <ButtonSecondary
+                  onClick={() => {
+                    toggler((prev) => !prev)
+                  }}
+                >
+                  Add new user
+                </ButtonSecondary>
+              )}
+            />
+          </div>
+        </div>
+        <UserTable />
+      </div>
+    </div>
+  )
 }
