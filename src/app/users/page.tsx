@@ -10,7 +10,7 @@ export default function UserPage() {
         <div className="mb-10 flex justify-between">
           <div>
             <h1 className="text-2xl lg:text-3xl font-semibold text-gray-700">Users</h1>
-            <p className="text-gray-500">1.232.150 registered users</p>
+            <p className="text-gray-500 text-sm">1.232.150 registered users</p>
           </div>
           <div>
             <NewUserModal
