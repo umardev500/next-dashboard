@@ -90,7 +90,7 @@ export const UserTable = () => {
   }, [])
 
   return (
-    <div className="mt-4">
+    <div className="mt-4 overflow-hidden">
       <Table
         actions={(item) => (
           <div className="w-6 h-6 -ml-6 mr-2 justify-center flex items-center">

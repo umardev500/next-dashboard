@@ -1,10 +1,11 @@
 'use client'
 
 import { Collapse, SidebarMenu } from '@/components/atoms'
+import { AppContext, type AppContextType } from '@/context'
 import { type SidebarMenuType } from '@/types/menu'
 import { Lexend_Deca } from 'next/font/google'
 import { usePathname } from 'next/navigation'
-import { Fragment } from 'react'
+import { Fragment, useContext } from 'react'
 
 const lexend = Lexend_Deca({ subsets: ['latin'] })
 
@@ -13,14 +14,36 @@ interface Props {
 }
 
 export const SidebarMenuList = ({ menu }: Props) => {
+  const ctx = useContext<AppContextType>(AppContext)
+  const lng = ctx.lng
   const pathname = usePathname()
+
+  /**
+   * Combines the provided link with the language if available.
+   *
+   * @param {string | undefined} href - The link to be combined with the language.
+   * @return {string} The combined link with the language, if available.
+   */
+  const combineLinkWithLang = (href: string | undefined) => {
+    let menuHref = href
+    if (lng) menuHref = `/${lng}${href}`
+    return menuHref
+  }
 
   return (
     <nav className="flex flex-col mt-10">
       {menu.map((item, index) => {
         // TODO
-        let isActive = pathname === item.href
-        const existInDropdown = item.children?.filter((i) => i.href === pathname)
+        const menuHref = combineLinkWithLang(item.href)
+
+        let isActive = pathname === menuHref
+        const existInDropdown = item.children?.filter((i) => {
+          let menuHref = i.href
+          if (lng) menuHref = `/${lng}${i.href}`
+
+          return menuHref === pathname
+        })
+
         if (existInDropdown?.length) {
           isActive = true
         }
@@ -47,8 +70,8 @@ export const SidebarMenuList = ({ menu }: Props) => {
                     >
                       {item.children.map((child, i) => {
                         // TODO
-                        const isChildActive = pathname === child.href
-
+                        const menuHref = combineLinkWithLang(child.href)
+                        const isChildActive = pathname === menuHref
                         return (
                           <Fragment key={i}>
                             <SidebarMenu sub menu={child} isActive={isChildActive} />
