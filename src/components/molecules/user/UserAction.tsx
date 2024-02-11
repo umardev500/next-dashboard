@@ -1,12 +1,27 @@
 import { ButtonDanger, DotsFill } from '@/components/atoms'
 import { Popover } from '@/components/molecules'
 import { Modal } from '@/components/organisms'
+import { NewUserModal } from '@/components/organisms/user'
 import { type UserData } from '@/types'
 
 const UserActionMenu = (item: UserData) => {
   return (
-    <div className="bg-white min-w-[120px] overflow-hidden shadow-lg py-2 whitespace-nowrap rounded-lg">
-      <div className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-medium">Detail</div>
+    <div className="bg-white min-w-[120px] overflow-hidden shadow-xl py-2 whitespace-nowrap rounded-lg">
+      {/* <div className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-medium">Detail</div> */}
+
+      <NewUserModal
+        button={(toggler) => (
+          <div
+            onClick={() => {
+              toggler((prev) => !prev)
+            }}
+            className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-medium"
+          >
+            Edit
+          </div>
+        )}
+      />
+
       <Modal
         dialogClassName="max-w-sm"
         button={({ toggler }) => (
@@ -32,8 +47,6 @@ const UserActionMenu = (item: UserData) => {
           </div>
         )}
       </Modal>
-
-      <div className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-medium">Edit</div>
     </div>
   )
 }
