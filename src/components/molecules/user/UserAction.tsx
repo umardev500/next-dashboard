@@ -6,7 +6,7 @@ import { type UserData } from '@/types'
 
 const UserActionMenu = (item: UserData) => {
   return (
-    <div className="bg-white min-w-[120px] overflow-hidden shadow-xl py-2 whitespace-nowrap rounded-lg">
+    <div className="bg-white min-w-[120px] overflow-hidden border border-gray-100 shadow-lg py-0.5 whitespace-nowrap rounded-lg">
       {/* <div className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-medium">Detail</div> */}
 
       <NewUserModal
@@ -15,7 +15,7 @@ const UserActionMenu = (item: UserData) => {
             onClick={() => {
               toggler((prev) => !prev)
             }}
-            className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-medium"
+            className="text-xs border-b border-b-gray-100 text-gray-600 hover:bg-gray-50 px-4 py-2 font-medium"
           >
             Edit
           </div>
@@ -29,7 +29,7 @@ const UserActionMenu = (item: UserData) => {
             onClick={() => {
               toggler((prev) => !prev)
             }}
-            className="text-xs text-red-600 hover:bg-gray-50 px-4 py-1.5 font-medium"
+            className="text-xs text-red-600 hover:bg-gray-50 px-4 py-2 font-medium"
           >
             Delete
           </div>
@@ -57,7 +57,7 @@ export const UserAction = (item: UserData) => {
       button={(open) => (
         <div className={'w-6 h-6 relative flex justify-center items-center'}>
           <DotsFill
-            className={`absolute ${!open && 'hidden'} group-hover:block text-gray-500`}
+            className={`absolute ${!open && 'hidden'} group-hover:block fill-gray-600`}
             width={16}
             height={16}
           />
