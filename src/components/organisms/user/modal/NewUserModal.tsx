@@ -55,7 +55,7 @@ export const NewUserModal: React.FC<NewUserModalType> = (props) => {
               </div>
               <div className="mb-4">
                 <Label id="user">Username</Label>
-                <Input id="user" placeholder="Enter username" />
+                <Input id="user" placeholder="umar.dev500@gmail.com" />
               </div>
               <div className="mb-4">
                 <Label id="pass">Password</Label>
