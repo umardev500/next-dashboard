@@ -7,11 +7,13 @@ export interface TableProps<TData, TColumn> {
   className?: string
   data: TData[]
   columns: Array<ColumnDef<TData, TColumn>>
+  actions?: (data: TData) => JSX.Element
 }
 
 export const Table = <TData, TColumn>(props: TableProps<TData, TColumn>) => {
   const data = props.data
   const cols = props.columns
+  const { actions } = props
 
   const table = useReactTable({
     data: props.data,
@@ -40,6 +42,7 @@ export const Table = <TData, TColumn>(props: TableProps<TData, TColumn>) => {
                   </th>
                 )
               })}
+              <th></th>
             </tr>
           ))}
         </thead>
@@ -47,7 +50,7 @@ export const Table = <TData, TColumn>(props: TableProps<TData, TColumn>) => {
         {/* Rows */}
         <tbody>
           {rows.map((row, i) => (
-            <tr className="odd:bg-white cursor-pointer even:bg-gray-50 border-b" key={row.id}>
+            <tr className="odd:bg-white group cursor-pointer even:bg-gray-50 border-b" key={row.id}>
               <td className="px-6 py-4 font-medium text-gray-600 whitespace-nowrap">{i + 1}</td>
               {row.getVisibleCells().map((cell) => {
                 return (
@@ -59,6 +62,8 @@ export const Table = <TData, TColumn>(props: TableProps<TData, TColumn>) => {
                   </td>
                 )
               })}
+
+              <td className="">{actions?.(row.original)}</td>
             </tr>
           ))}
         </tbody>

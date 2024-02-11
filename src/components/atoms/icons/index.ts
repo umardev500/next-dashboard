@@ -1,5 +1,6 @@
 export * from './CaretDownBold'
 export * from './ChartBarDuotone'
+export * from './DotsFill'
 export * from './FileImageDuotone'
 export * from './FolderLockDuotone'
 export * from './HeadsetDuotone'

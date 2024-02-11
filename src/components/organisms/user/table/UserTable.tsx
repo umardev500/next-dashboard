@@ -1,4 +1,6 @@
+import { UserAction } from '@/components/molecules/user'
 import { Table } from '@/components/organisms'
+import { type UserData } from '@/types'
 import { faker } from '@faker-js/faker'
 import { useEffect, useState } from 'react'
 
@@ -19,8 +21,8 @@ const columns = [
     cell: (props: any) => <p>{props.getValue()}</p>,
   },
   {
-    accessorKey: 'username',
-    header: 'Username',
+    accessorKey: 'created_at',
+    header: 'Created at',
     cell: (props: any) => <p>{props.getValue()}</p>,
   },
   {
@@ -58,13 +60,13 @@ const columns = [
 export const UserTable = () => {
   const statusOptions = ['active', 'inactive', 'pending', 'deleted']
 
-  const [data, setData] = useState([
+  const [data, setData] = useState<UserData[]>([
     {
       id: 'c5344e5c-3960-4c5b-9ee5-5dd38f361f45',
       name: 'umarsdd',
       email: 'lorem@example.com',
-      username: 'umardev500',
       status: 'active',
+      created_at: '2022-01-01T00:00:00.000Z',
     },
   ])
 
@@ -77,8 +79,8 @@ export const UserTable = () => {
         id: faker.string.uuid(),
         name: faker.person.fullName(),
         email: faker.internet.email(),
-        username: faker.internet.userName(),
         status: statusOptions[Math.floor(Math.random() * statusOptions.length)],
+        created_at: faker.date.past().toISOString(),
       }
 
       dataList.push(dummyData)
@@ -89,7 +91,15 @@ export const UserTable = () => {
 
   return (
     <div className="mt-4">
-      <Table columns={columns} data={data} />
+      <Table
+        actions={(item) => (
+          <div className="w-6 h-6 -ml-6 mr-2 justify-center flex items-center">
+            <UserAction {...item} />
+          </div>
+        )}
+        columns={columns}
+        data={data}
+      />
     </div>
   )
 }
