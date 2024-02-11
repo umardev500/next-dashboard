@@ -7,7 +7,7 @@ export const ButtonDanger: React.FC<ButtonProps> = (props) => {
   return (
     <Button
       {...props}
-      className={`${className} bg-red-700 hover:bg-red-800 focus:bg-red-800 focus:ring-red-300 text-white`}
+      className={`${className} bg-red-700 hover:bg-red-800 active:bg-red-900 focus:ring-red-300 text-white`}
     >
       {children}
     </Button>

@@ -7,7 +7,7 @@ export const ButtonPrimary: React.FC<ButtonProps> = (props) => {
   return (
     <Button
       {...props}
-      className={`${className} bg-blue-700 hover:bg-blue-800 focus:bg-blue-800 focus:ring-blue-300 text-white`}
+      className={`${className} bg-blue-700 hover:bg-blue-800 focus:bg-blue-800 active:bg-blue-900 focus:ring-blue-300 text-white`}
     >
       {children}
     </Button>

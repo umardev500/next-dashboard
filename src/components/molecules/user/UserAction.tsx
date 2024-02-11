@@ -42,7 +42,14 @@ const UserActionMenu = (item: UserData) => {
             </p>
 
             <div className="flex justify-center mt-4">
-              <ButtonDanger className="w-full">Confirm</ButtonDanger>
+              <ButtonDanger
+                onClick={() => {
+                  console.log('clicked')
+                }}
+                className="w-full"
+              >
+                Confirm
+              </ButtonDanger>
             </div>
           </div>
         )}
