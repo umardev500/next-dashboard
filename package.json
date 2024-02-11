@@ -11,18 +11,24 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@formatjs/intl-localematcher": "^0.5.4",
     "@headlessui/react": "^1.7.17",
     "@tanstack/react-table": "^8.11.8",
+    "accept-language": "^3.0.18",
+    "i18next": "^23.8.2",
+    "negotiator": "^0.6.3",
     "next": "14.0.3",
     "next-nprogress-bar": "^2.1.2",
     "react": "^18",
     "react-dom": "^18",
+    "react-i18next": "^14.0.5",
     "react-paginate": "^8.2.0",
     "react-toastify": "^10.0.4",
     "simplebar-react": "^3.2.4"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.0",
+    "@types/negotiator": "^0.6.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

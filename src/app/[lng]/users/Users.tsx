@@ -2,8 +2,14 @@
 
 import { ButtonSecondary } from '@/components/atoms'
 import { NewUserModal, UserTable } from '@/components/organisms/user'
+import { type ClientPageProps } from '@/types'
 
-export default function UserPage() {
+interface Props extends ClientPageProps {}
+
+export const Users: React.FC<Props> = (props) => {
+  const { dict } = props
+  console.log(dict)
+
   return (
     <div className="container m-auto p-4 mt-6">
       <div className="bg-white p-8 rounded-lg">
