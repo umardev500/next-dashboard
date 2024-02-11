@@ -13,11 +13,11 @@ interface Props extends ClientPageProps {
 }
 
 export const Dashboard = (props: Props) => {
-  const { children, dict } = props
-  console.log('RENDER DASHBOARD')
+  const { children, dict, lng } = props
+  console.log('RENDER DASHBOARD', lng)
 
   return (
-    <AppProvider dict={dict}>
+    <AppProvider lng={lng} dict={dict}>
       <main>
         <ProgressBar
           color="#3b82f6"

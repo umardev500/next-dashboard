@@ -21,8 +21,9 @@ export default async function RootLayout(props: PageProps) {
   return (
     <html lang={lng} dir={dir(lng)}>
       <body className={inter.className}>
-        <div>foo</div>
-        <Dashboard dict={dict}>{children}</Dashboard>
+        <Dashboard lng={lng} dict={dict}>
+          {children}
+        </Dashboard>
       </body>
     </html>
   )

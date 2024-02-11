@@ -12,6 +12,6 @@ export interface PageProps {
 
 export interface ClientPageProps {
   dict: typeof Dict
-  lgn?: Lang
+  lng?: Lang
   children?: React.ReactNode
 }

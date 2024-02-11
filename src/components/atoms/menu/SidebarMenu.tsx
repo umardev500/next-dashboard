@@ -1,7 +1,8 @@
 import { CaretDownBold } from '@/components/atoms'
+import { AppContext, type AppContextType } from '@/context'
 import { type SidebarMenuType } from '@/types/menu'
 import Link from 'next/link'
-import React from 'react'
+import React, { useContext } from 'react'
 
 interface Props {
   menu: SidebarMenuType
@@ -32,6 +33,11 @@ export const SidebarMenu: React.FC<Props> = (props) => {
       : 'opacity-40 ring-transparent bg-gray-700'
   }`
 
+  const ctx = useContext<AppContextType>(AppContext)
+  const lng = ctx.lng
+  let menuHref = menu.href
+  if (lng) menuHref = `/${lng}${menu.href}`
+
   return (
     <>
       {collapse ? (
@@ -51,7 +57,7 @@ export const SidebarMenu: React.FC<Props> = (props) => {
       ) : isButton ? (
         menu.button?.({ menu, sub, open: false, className, dotClassName, iconClassName })
       ) : (
-        <Link href={menu.href as string} className={className}>
+        <Link href={menuHref as string} className={className}>
           {sub ? (
             <>
               <span className={dotClassName} />
