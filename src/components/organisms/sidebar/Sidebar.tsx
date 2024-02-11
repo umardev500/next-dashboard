@@ -8,7 +8,7 @@ export const Sidebar = () => {
   const menus = ctx.dict.sidebar.menus
 
   return (
-    <aside className="fixed bottom-0 h-full border-e border-gray-100 w-[270px] bg-white">
+    <aside className="fixed outline-none bottom-0 h-full border-e border-gray-100 w-[270px] bg-white">
       <SimpleBar className="h-[calc(100%)]">
         <SidebarMenuList menu={menus} />
       </SimpleBar>
