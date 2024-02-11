@@ -1,8 +1,8 @@
 import 'server-only'
 
 const dictionaries = {
-  en: async () => await import('../i18n/en.json').then((module) => module.default),
-  id: async () => await import('../i18n/id.json').then((module) => module.default),
+  en: async () => await import('../i18n/en').then((module) => module.default),
+  id: async () => await import('../i18n/id').then((module) => module.default),
 }
 
 type Language = keyof typeof dictionaries

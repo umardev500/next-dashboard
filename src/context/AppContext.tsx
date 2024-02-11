@@ -12,8 +12,6 @@ export interface AppContextType {
 export const AppProvider: React.FC<Props> = (props) => {
   const { children, dict } = props
 
-  console.log(dict)
-
   const value = {
     dict,
   }
