@@ -1,5 +1,5 @@
 import { UserAction } from '@/components/molecules/user'
-import { Table } from '@/components/organisms'
+import { Pagination, Table } from '@/components/organisms'
 import { type UserData } from '@/types'
 import { faker } from '@faker-js/faker'
 import { useEffect, useState } from 'react'
@@ -90,16 +90,21 @@ export const UserTable = () => {
   }, [])
 
   return (
-    <div className="mt-4 overflow-hidden">
-      <Table
-        actions={(item) => (
-          <div className="w-6 h-6 -ml-6 mr-2 justify-center flex items-center">
-            <UserAction {...item} />
-          </div>
-        )}
-        columns={columns}
-        data={data}
-      />
+    <div className="">
+      <div className="mt-4 overflow-x-auto">
+        <Table
+          actions={(item) => (
+            <div className="w-6 h-6 -ml-6 mr-2 justify-center flex items-center">
+              <UserAction {...item} />
+            </div>
+          )}
+          columns={columns}
+          data={data}
+        />
+      </div>
+      <div className="mt-6">
+        <Pagination pageCount={data.length} />
+      </div>
     </div>
   )
 }

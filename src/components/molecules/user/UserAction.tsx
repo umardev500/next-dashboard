@@ -6,7 +6,7 @@ import { type UserData } from '@/types'
 
 const UserActionMenu = (item: UserData) => {
   return (
-    <div className="bg-white min-w-[120px] overflow-hidden border border-gray-100 shadow-lg py-0.5 whitespace-nowrap rounded-lg">
+    <div className="bg-white relative min-w-[120px] overflow-hidden border border-gray-100 shadow-lg py-0.5 whitespace-nowrap rounded-lg">
       {/* <div className="text-xs text-gray-600 hover:bg-gray-50 px-4 py-1.5 font-medium">Detail</div> */}
 
       <NewUserModal
@@ -15,7 +15,7 @@ const UserActionMenu = (item: UserData) => {
             onClick={() => {
               toggler((prev) => !prev)
             }}
-            className="text-xs border-b border-b-gray-100 text-gray-600 hover:bg-gray-50 px-4 py-2 font-medium"
+            className="text-xs border-b cursor-pointer border-b-gray-100 text-gray-600 hover:bg-gray-50 px-4 py-2 font-medium"
           >
             Edit
           </div>
@@ -29,7 +29,7 @@ const UserActionMenu = (item: UserData) => {
             onClick={() => {
               toggler((prev) => !prev)
             }}
-            className="text-xs text-red-600 hover:bg-gray-50 px-4 py-2 font-medium"
+            className="text-xs cursor-pointer text-red-600 hover:bg-gray-50 px-4 py-2 font-medium"
           >
             Delete
           </div>

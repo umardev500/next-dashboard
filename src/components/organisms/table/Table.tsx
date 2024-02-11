@@ -1,6 +1,5 @@
 'use client'
 
-import { Pagination } from '@/components/organisms'
 import { flexRender, getCoreRowModel, useReactTable, type ColumnDef } from '@tanstack/react-table'
 
 export interface TableProps<TData, TColumn> {
@@ -11,7 +10,6 @@ export interface TableProps<TData, TColumn> {
 }
 
 export const Table = <TData, TColumn>(props: TableProps<TData, TColumn>) => {
-  const data = props.data
   const cols = props.columns
   const { actions } = props
 
@@ -68,10 +66,6 @@ export const Table = <TData, TColumn>(props: TableProps<TData, TColumn>) => {
           ))}
         </tbody>
       </table>
-
-      <div className="mt-6">
-        <Pagination pageCount={data.length} />
-      </div>
     </div>
   )
 }

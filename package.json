@@ -12,7 +12,9 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.5.4",
+    "@headlessui-float/react": "^0.13.1",
     "@headlessui/react": "^1.7.17",
+    "@popperjs/core": "^2.11.8",
     "@tanstack/react-table": "^8.11.8",
     "accept-language": "^3.0.18",
     "i18next": "^23.8.2",
@@ -23,6 +25,7 @@
     "react-dom": "^18",
     "react-i18next": "^14.0.5",
     "react-paginate": "^8.2.0",
+    "react-popper": "^2.3.0",
     "react-toastify": "^10.0.4",
     "simplebar-react": "^3.2.4"
   },
