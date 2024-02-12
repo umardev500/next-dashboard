@@ -7,7 +7,7 @@ import { Lexend_Deca } from 'next/font/google'
 import { usePathname } from 'next/navigation'
 import { Fragment, useContext } from 'react'
 
-const lexend = Lexend_Deca({ subsets: ['latin'] })
+const lexend = Lexend_Deca({ subsets: ['latin'], fallback: ['system-ui'] })
 
 interface Props {
   menu: SidebarMenuType[]
