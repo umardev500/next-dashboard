@@ -8,6 +8,7 @@ import {
   PackageDuotone,
   ShoppingCartDuotone,
   SignoutDuotone,
+  StackDuotone,
   TelegramDuotone,
   UserDuotone,
   UserGearDuotone,
@@ -74,6 +75,21 @@ const def = {
           {
             name: 'Settlement orders',
             href: '/orders/settlement',
+          },
+        ],
+      },
+      {
+        name: 'Criterias',
+        href: '/criterias',
+        icon: <StackDuotone className="w-[18px] h-[18px] fill-current" />,
+        children: [
+          {
+            name: 'All Criterias',
+            href: '/criterias',
+          },
+          {
+            name: 'New Criteria',
+            href: '/criterias/new',
           },
         ],
       },
