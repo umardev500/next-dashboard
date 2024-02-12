@@ -1,18 +1,15 @@
 'use client'
 
 import {
-  ChartBarDuotone,
-  FileImageDuotone,
   FolderLockDuotone,
   HeadsetDuotone,
-  PackageDuotone,
-  ShoppingCartDuotone,
   SignoutDuotone,
   StackDuotone,
   TelegramDuotone,
   UserDuotone,
   UserGearDuotone,
 } from '@/components/atoms'
+import { NewCriteriaModal, NewSubCriteriaModal } from '@/components/organisms/criteria'
 import { NewUserModal } from '@/components/organisms/user'
 
 const def = {
@@ -21,63 +18,63 @@ const def = {
       {
         name: 'Home',
       },
-      {
-        name: 'File manager',
-        href: '/file-manager',
-        icon: <FileImageDuotone className="w-[18px] h-[18px] fill-current" />,
-      },
-      {
-        name: 'Analytics',
-        href: '/analytics',
-        icon: <ChartBarDuotone className="w-[18px] h-[18px] fill-current" />,
-      },
-      {
-        name: 'Products',
-        href: '/products',
-        icon: <PackageDuotone className="w-[18px] h-[18px] fill-current" />,
-        open: true,
-        children: [
-          {
-            name: 'All Products',
-            href: '/products',
-          },
-          {
-            name: 'New Products',
-            href: '/products/new',
-          },
-          {
-            name: 'Draft Products',
-            href: '/products/draft',
-          },
-          {
-            name: 'Deleted Products',
-            href: '/products/deleted',
-          },
-        ],
-      },
-      {
-        name: 'Orders',
-        href: '/orders',
-        icon: <ShoppingCartDuotone className="w-[18px] h-[18px] fill-current" />,
-        children: [
-          {
-            name: 'All orders',
-            href: '/orders/all',
-          },
-          {
-            name: 'Pending orders',
-            href: '/orders/pending',
-          },
-          {
-            name: 'Canceled orders',
-            href: '/orders/canceled',
-          },
-          {
-            name: 'Settlement orders',
-            href: '/orders/settlement',
-          },
-        ],
-      },
+      // {
+      //   name: 'File manager',
+      //   href: '/file-manager',
+      //   icon: <FileImageDuotone className="w-[18px] h-[18px] fill-current" />,
+      // },
+      // {
+      //   name: 'Analytics',
+      //   href: '/analytics',
+      //   icon: <ChartBarDuotone className="w-[18px] h-[18px] fill-current" />,
+      // },
+      // {
+      //   name: 'Products',
+      //   href: '/products',
+      //   icon: <PackageDuotone className="w-[18px] h-[18px] fill-current" />,
+      //   open: true,
+      //   children: [
+      //     {
+      //       name: 'All Products',
+      //       href: '/products',
+      //     },
+      //     {
+      //       name: 'New Products',
+      //       href: '/products/new',
+      //     },
+      //     {
+      //       name: 'Draft Products',
+      //       href: '/products/draft',
+      //     },
+      //     {
+      //       name: 'Deleted Products',
+      //       href: '/products/deleted',
+      //     },
+      //   ],
+      // },
+      // {
+      //   name: 'Orders',
+      //   href: '/orders',
+      //   icon: <ShoppingCartDuotone className="w-[18px] h-[18px] fill-current" />,
+      //   children: [
+      //     {
+      //       name: 'All orders',
+      //       href: '/orders/all',
+      //     },
+      //     {
+      //       name: 'Pending orders',
+      //       href: '/orders/pending',
+      //     },
+      //     {
+      //       name: 'Canceled orders',
+      //       href: '/orders/canceled',
+      //     },
+      //     {
+      //       name: 'Settlement orders',
+      //       href: '/orders/settlement',
+      //     },
+      //   ],
+      // },
       {
         name: 'Criterias',
         href: '/criterias',
@@ -90,6 +87,16 @@ const def = {
           {
             name: 'New Criteria',
             href: '/criterias/new',
+            button: (props: any) => <NewCriteriaModal {...props} />,
+          },
+          {
+            name: 'Sub Criterias',
+            href: '/criterias/sub',
+          },
+          {
+            name: 'New sub Criteria',
+            href: '/criterias/sub/new',
+            button: (props: any) => <NewSubCriteriaModal {...props} />,
           },
         ],
       },

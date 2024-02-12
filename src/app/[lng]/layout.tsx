@@ -6,7 +6,21 @@ import { dir } from 'i18next'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'], fallback: ['system-ui'] })
+// const inter = Inter({ subsets: ['latin'], fallback: ['system-ui'] })
+const inter = Inter({
+  subsets: ['latin'],
+  fallback: [
+    'system-ui',
+    'Segoe UI',
+    'Roboto',
+    'Helvetica',
+    'Arial',
+    'sans-serif',
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+  ],
+})
 
 export const metadata: Metadata = {
   title: 'Create Next App',
