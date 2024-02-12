@@ -31,7 +31,7 @@ export const SidebarMenuList = ({ menu }: Props) => {
   }
 
   return (
-    <nav className="flex flex-col mt-10">
+    <nav className="flex flex-col mt-4">
       {menu.map((item, index) => {
         // TODO
         const menuHref = combineLinkWithLang(item.href)
