@@ -1,17 +1,16 @@
 'use client'
 
+import Criteria from '@/app/i18n/id/criteria.json'
 import {
-  ChartBarDuotone,
-  FileImageDuotone,
   FolderLockDuotone,
   HeadsetDuotone,
-  PackageDuotone,
-  ShoppingCartDuotone,
   SignoutDuotone,
+  StackDuotone,
   TelegramDuotone,
   UserDuotone,
   UserGearDuotone,
 } from '@/components/atoms'
+import { NewCriteriaModal, NewSubCriteriaModal } from '@/components/organisms/criteria'
 import { NewUserModal } from '@/components/organisms/user'
 
 const def = {
@@ -21,59 +20,27 @@ const def = {
         name: 'Home',
       },
       {
-        name: 'File manager',
-        href: '/file-manager',
-        icon: <FileImageDuotone className="w-[18px] h-[18px] fill-current" />,
-      },
-      {
-        name: 'Analytics',
-        href: '/analytics',
-        icon: <ChartBarDuotone className="w-[18px] h-[18px] fill-current" />,
-      },
-      {
-        name: 'Products',
-        href: '/products',
-        icon: <PackageDuotone className="w-[18px] h-[18px] fill-current" />,
-        open: true,
+        name: 'Kriteria',
+        href: '/criterias',
+        icon: <StackDuotone className="w-[18px] h-[18px] fill-current" />,
         children: [
           {
-            name: 'All Products',
-            href: '/products',
+            name: 'Semua Kriteria',
+            href: '/criterias',
           },
           {
-            name: 'New Products',
-            href: '/products/new',
+            name: 'Tambah Kriteria',
+            href: '/criterias/new',
+            button: (props: any) => <NewCriteriaModal {...props} />,
           },
           {
-            name: 'Draft Products',
-            href: '/products/draft',
+            name: 'Sub Kriteria',
+            href: '/criterias/sub',
           },
           {
-            name: 'Deleted Products',
-            href: '/products/deleted',
-          },
-        ],
-      },
-      {
-        name: 'Orders',
-        href: '/orders',
-        icon: <ShoppingCartDuotone className="w-[18px] h-[18px] fill-current" />,
-        children: [
-          {
-            name: 'All orders',
-            href: '/orders/all',
-          },
-          {
-            name: 'Pending orders',
-            href: '/orders/pending',
-          },
-          {
-            name: 'Canceled orders',
-            href: '/orders/canceled',
-          },
-          {
-            name: 'Settlement orders',
-            href: '/orders/settlement',
+            name: 'Tambah Sub Kriteria',
+            href: '/criterias/sub/new',
+            button: (props: any) => <NewSubCriteriaModal {...props} />,
           },
         ],
       },
@@ -133,6 +100,9 @@ const def = {
         icon: <SignoutDuotone className="w-[18px] h-[18px] fill-current" />,
       },
     ],
+  },
+  criteria: {
+    ...Criteria,
   },
 }
 

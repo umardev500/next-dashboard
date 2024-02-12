@@ -1,0 +1,14 @@
+{
+  "all": {
+    "title": "Criterias",
+    "subTitle": "Total of criterias",
+    "newBtn": "Add new criteria",
+    "criteriaTable": {
+      "no": "No.",
+      "id": "ID",
+      "name": "Name",
+      "weight": "Weight",
+      "createdAt": "Created At"
+    }
+  }
+}

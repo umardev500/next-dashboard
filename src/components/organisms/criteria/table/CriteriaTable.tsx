@@ -1,34 +1,39 @@
 import { CriteriaAction } from '@/components/molecules/criteria'
 import { Pagination, Table } from '@/components/organisms'
+import { AppContext, type AppContextType } from '@/context'
 import { type CriteriaData } from '@/types/criteria'
 import { faker } from '@faker-js/faker'
-import { useEffect, useState } from 'react'
-
-const columns = [
-  {
-    accessorKey: 'id',
-    header: 'ID',
-    cell: (props: any) => <p>{props.getValue()}</p>,
-  },
-  {
-    accessorKey: 'name',
-    header: 'Name',
-    cell: (props: any) => <p>{props.getValue()}</p>,
-  },
-  {
-    accessorKey: 'weight',
-    header: 'Weight',
-    cell: (props: any) => <p>{props.getValue()}</p>,
-  },
-  {
-    accessorKey: 'created_at',
-    header: 'Created at',
-    cell: (props: any) => <p>{props.getValue()}</p>,
-  },
-]
+import { useContext, useEffect, useState } from 'react'
 
 export const CriteriaTable = () => {
+  const ctx = useContext<AppContextType>(AppContext)
+  const criteria = ctx.dict.criteria
+  const ct = criteria.all.criteriaTable
+
   const statusOptions = ['active', 'inactive', 'pending', 'deleted']
+
+  const columns = [
+    {
+      accessorKey: 'id',
+      header: ct.id,
+      cell: (props: any) => <p>{props.getValue()}</p>,
+    },
+    {
+      accessorKey: 'name',
+      header: ct.name,
+      cell: (props: any) => <p>{props.getValue()}</p>,
+    },
+    {
+      accessorKey: 'weight',
+      header: ct.weight,
+      cell: (props: any) => <p>{props.getValue()}</p>,
+    },
+    {
+      accessorKey: 'created_at',
+      header: ct.createdAt,
+      cell: (props: any) => <p>{props.getValue()}</p>,
+    },
+  ]
 
   const [data, setData] = useState<CriteriaData[]>([
     {

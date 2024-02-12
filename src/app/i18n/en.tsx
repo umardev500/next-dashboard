@@ -1,5 +1,6 @@
 'use client'
 
+import Criteria from '@/app/i18n/en/criteria.json'
 import {
   FolderLockDuotone,
   HeadsetDuotone,
@@ -156,6 +157,9 @@ const def = {
         icon: <SignoutDuotone className="w-[18px] h-[18px] fill-current" />,
       },
     ],
+  },
+  criteria: {
+    ...Criteria,
   },
 }
 

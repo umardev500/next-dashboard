@@ -1,0 +1,14 @@
+{
+  "all": {
+    "title": "Kriteria",
+    "subTitle": "Jumlah kriteria",
+    "newBtn": "Tambah kriteria",
+    "criteriaTable": {
+      "no": "No.",
+      "id": "ID",
+      "name": "Nama",
+      "weight": "Bobot",
+      "createdAt": "Dibuat Pada"
+    }
+  }
+}
